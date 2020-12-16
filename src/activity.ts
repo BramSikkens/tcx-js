@@ -11,7 +11,7 @@ import { Timestamp }   from "./ts";
 
 export class Activity {
 
-    public tcx_filename : string = "";
+    //public tcx_filename : string = "";
     public activityId: string = "";
     public sport: string = "";
     public author: Author;
