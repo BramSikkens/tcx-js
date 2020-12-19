@@ -31,7 +31,8 @@
     "mocha-junit-reporter": "^1.23.1",
     "mocha-multi-reporters": "^1.1.7",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "webpack-cli": "^4.2.0"
   },
   "keywords": [
     "tcx",

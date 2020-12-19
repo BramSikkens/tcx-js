@@ -1,6 +1,6 @@
 # cj
 
-dist/
+#dist/
 tmp/
 
 # Logs

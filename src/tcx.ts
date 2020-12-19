@@ -313,7 +313,7 @@ export class Creator {
 
 export class Activity {
 
-    public tcx_filename : string = "";
+    //public tcx_filename : string = "";
     public activityId: string = "";
     public sport: string = "";
     public author: Author;
@@ -361,15 +361,15 @@ export class Parser {
     public static get VERSION(): string  { return "1.0.1"; }
 
     public activity : Activity = new Activity();
-    public tcx_filename: string = '';
+    public tcx: string = '';
 
-    public constructor(infile: string) {
-        this.tcx_filename = infile;
-        this.activity.tcx_filename = infile;
-        let tcx_xml_str = fs.readFileSync(infile).toString();
-        let root_obj : JsonObject = <JsonObject> this.convertXmlToJson(tcx_xml_str);
+    public constructor(tcx: string) {
+        this.tcx = tcx;
+        //this.activity.tcx_filename = infile;
+        //let tcx_xml_str = fs.readFileSync(infile).toString();
+        let root_obj : JsonObject = <JsonObject> this.convertXmlToJson(tcx);
         let tcdb : JsonObject = <JsonObject> root_obj["TrainingCenterDatabase"];
-        let tcdb_file = this.tcx_filename + ".json";
+        //let tcdb_file = this.tcx_filename + ".json";
 
         // console.log(JSON.stringify(root_obj));
         // var epoch = new Date().getTime();
@@ -445,6 +445,9 @@ export class Parser {
 
         this.activity.firstTrackpoint = null;  
     }
+
+
+  
 
     public convertXmlToJson(data: string): Object {
         let res : Object = {};
